@@ -1,0 +1,39 @@
+{
+  "name": "hermes-premit",
+  "version": "0.1.1",
+  "type": "module",
+  "bin": {
+    "permit": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "PRD.md",
+    "docs"
+  ],
+  "scripts": {
+    "permit": "tsx src/cli.ts",
+    "init": "tsx src/cli.ts init",
+    "start": "tsx src/cli.ts start",
+    "status": "tsx src/cli.ts status",
+    "doctor": "tsx src/cli.ts doctor",
+    "seed": "tsx src/cli.ts seed",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run check && npm run test && npm run build",
+    "test": "tsx test/e2e.ts",
+    "check": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^26.0.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}

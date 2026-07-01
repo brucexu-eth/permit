@@ -1,0 +1,5 @@
+.permit/
+node_modules/
+dist/
+.vibeman/vibeman.db
+.DS_Store
